@@ -1,4 +1,8 @@
 {
+  "type": "module",
+  "name": "alx-backend-javascript",
+  "version": "1.2.2",
+
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "check-lint": "lint [0-9]*.js",
@@ -6,6 +10,7 @@
     "test": "jest",
     "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   },
+
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.8.0",
