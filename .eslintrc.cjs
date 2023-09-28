@@ -20,6 +20,8 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-shadow': 'off',
+    'no-underscore-dangle': 'off',
+    'max-classes-per-file': 'off',
     'no-restricted-syntax': [
       'error',
       'LabeledStatement',
