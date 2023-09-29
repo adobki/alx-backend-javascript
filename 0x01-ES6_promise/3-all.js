@@ -1,9 +1,13 @@
 // Handles multiple successful promises
 
-import { uploadPhoto, createUser } from "./utils.js";
+import { uploadPhoto, createUser } from './utils';
 
 export default async function handleProfileSignup() {
-  let mes = `${(await uploadPhoto()).body} `;
-  mes += [...Object.values((await createUser()))].join(' ');
-  console.log(mes);
+  try {
+    let mes = `${(await uploadPhoto()).body} `;
+    mes += [...Object.values((await createUser()))].join(' ');
+    console.log(mes);
+  } catch (e) {
+    console.log('Signup system offline');
+  }
 }
