@@ -1,6 +1,13 @@
-// Returns first resolved promise promises
+// Returns output from promise that gets resolved first
 
 export default async function loadBalancer(chinaDownload, USDownload) {
-  USDownload.then((data) => data);
-  return chinaDownload.then((data) => data);
+  const completedJobs = [];
+
+  USDownload.then((data) => completedJobs.push(data));
+  chinaDownload.then((data) => completedJobs.push(data));
+
+  await USDownload.then();
+  await chinaDownload.then();
+
+  return completedJobs[0];
 }

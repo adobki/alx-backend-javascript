@@ -1,6 +1,9 @@
 // Tests the code in the referenced script(s)
 
-import handleResponseFromAPI from "../2-then.js";
+/* eslint-disable import/extensions */
+import handleResponseFromAPI from '../2-then.js';
 
 const promise = Promise.resolve();
-handleResponseFromAPI(promise);
+console.log(handleResponseFromAPI(promise));
+handleResponseFromAPI(Promise.resolve()).then((data) => console.log(data));
+handleResponseFromAPI(Promise.reject()).then((data) => console.log(data));
