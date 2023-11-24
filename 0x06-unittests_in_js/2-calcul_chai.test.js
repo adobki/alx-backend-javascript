@@ -1,5 +1,6 @@
 // Basic test using Chai assertion library
 
+const assert = require("assert");
 const expect = require('chai').expect;
 const calculateNumber = require('./2-calcul_chai');
 
@@ -149,10 +150,10 @@ describe('calculateNumber `Math.round` usage', function () {
 
 describe('calculateNumber `DIVIDE` operations', function () {
   it('correctly handles zero division', function () {
-    expect(calculateNumber('DIVIDE', 0, 2)).to.equal('Error');
+    expect(calculateNumber('DIVIDE', 2, 0)).to.equal('Error');
   });
-  it('correctly divides by zero', function () {
-    expect(calculateNumber('DIVIDE', 2, 0)).to.equal(Infinity);
+  it('correctly divides zero', function () {
+    expect(calculateNumber('DIVIDE', 0, 2)).to.equal(0);
   });
   it('correctly divides positive integers', function () {
     expect(calculateNumber('DIVIDE', 3, 1)).to.equal(3);

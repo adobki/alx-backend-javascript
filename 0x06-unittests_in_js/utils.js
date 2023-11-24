@@ -16,10 +16,8 @@ function calculateNumber(type, a, b) {
   const x = Math.round(a); const y = Math.round(b);
   if (type === 'SUM') return x + y;
   if (type === 'SUBTRACT') return x - y;
-  if (type === 'DIVIDE' && x) return x / y;
+  if (type === 'DIVIDE' && y) return x / y;
   return 'Error';
 }
 
-// const Utils = { calculateNumber };
-// module.exports = Utils;
 module.exports = { calculateNumber };

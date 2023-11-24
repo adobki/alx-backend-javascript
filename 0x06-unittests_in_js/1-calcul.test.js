@@ -149,10 +149,10 @@ describe('calculateNumber `Math.round` usage', function () {
 
 describe('calculateNumber `DIVIDE` operations', function () {
   it('correctly handles zero division', function () {
-    assert.equal(calculateNumber('DIVIDE', 0, 2), 'Error');
+    assert.equal(calculateNumber('DIVIDE', 2, 0), 'Error');
   });
-  it('correctly divides by zero', function () {
-    assert.equal(calculateNumber('DIVIDE', 2, 0), Infinity);
+  it('correctly divides zero', function () {
+    assert.equal(calculateNumber('DIVIDE', 0, 2), 0);
   });
   it('correctly divides positive integers', function () {
     assert.equal(calculateNumber('DIVIDE', 3, 1), 3);
